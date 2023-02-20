@@ -1,2 +1,4 @@
 selenium==4.8.2
 pendulum==2.1.2
+flake8==6.0.0
+XlsxWriter==3.0.8
