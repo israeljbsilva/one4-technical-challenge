@@ -1,3 +1,5 @@
+import os.path
+import sys
 import time
 from datetime import timedelta
 from pathlib import Path
@@ -20,7 +22,12 @@ class ExtractProcessesTST:
 
     @staticmethod
     def start_browser_by_url() -> WebDriver:
-        browser = webdriver.Chrome()
+        if getattr(sys, 'frozen', False):
+            chromedriver_path = os.path.join(sys._MEIPASS, "chromedriver.exe")
+            browser = webdriver.Chrome(chromedriver_path)
+        else:
+            browser = webdriver.Chrome()
+
         browser.get(URL)
         return browser
 

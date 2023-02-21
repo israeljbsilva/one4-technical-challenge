@@ -9,3 +9,5 @@ if __name__ == "__main__":
     generate_spreadsheets_per_day(diaries_separated_by_date)
 
     generate_duplicates_report(diaries_separated_by_date)
+
+    extract_processes_tst.browser.close()
