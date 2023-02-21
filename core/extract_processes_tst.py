@@ -63,7 +63,7 @@ class ExtractProcessesTST:
 
     @staticmethod
     def is_download_finished() -> None:
-        path_download = '/home/suporte/Downloads'  # TODO: para windows muda
+        path_download = str(Path.home() / 'Downloads')
         while True:
             if not sorted(Path(path_download).glob('*.crdownload')):
                 break
